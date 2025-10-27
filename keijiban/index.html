@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地域掲示板｜地域の最新情報を共有・検索できる情報共有サイト</title>
+
+  <!-- ✅ Meta Description -->
+  <meta name="description" content="地域掲示板は、地域に関する情報を共有・検索できる無料の情報共有サイトです。最新のスレッドを簡単に確認し、地域の出来事をみんなで共有しましょう。">
+
+  <!-- ✅ Keywords（現在はSEO効果薄いが一部クローラ対応） -->
+  <meta name="keywords" content="地域掲示板, 地域情報, 掲示板, ローカルニュース, コミュニティ">
+
+  <!-- ✅ OGP設定 -->
+  <meta property="og:title" content="地域掲示板｜地域の最新情報を共有できるサイト">
+  <meta property="og:description" content="地域に関する最新スレッドをすぐ確認！検索機能付きの地域情報掲示板。みんなの声を共有しよう。">
+  <meta property="og:image" content="https://example.com/img/ogp.png">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="地域掲示板">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ✅ リソース -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header_title_frame">
+      <h1 class="header_title">地域掲示板</h1>
+    </div>
+    <a class="header_comment" href="https://keijibann2.vercel.app/">皆さんの地域の情報を共有してみませんか？</a>
+  </header>
+
+  <main>
+    <section class="explain_frame">
+      <h2 class="home_explain">地域に関する情報を共有しあおう。</h2>
+      <p class="home_explain2">みんなの情報共有広場です</p>
+
+      <div class="explain3_frame">
+        <div class="slide_frame1" href="https://keijibann2.vercel.app/">
+          <div class="slide1 active">
+            <a class="home_explain3" href="https://keijibann2.vercel.app/">最新のスレッドを即確認</a>
+          </div>
+          <div class="slide2">
+            <a class="home_explain4" href="https://keijibann2.vercel.app/">スレッド検索機能搭載</a>
+          </div>
+        </div>
+
+        <div class="home_img_frame">
+          <img class="home_img" src="img\スクリーンショット 2025-10-27 113617.png" 
+               alt="地域掲示板のホーム画面" loading="lazy">
+        </div>
+
+        <div class="slide_frame2">
+          <div class="slide3 active">
+            <p class="explain3_content">いつでもすぐに最新のスレッドを確認できます</p>
+          </div>
+          <div class="slide4">
+            <p class="explain4_content">気になるスレッドがあれば検索できる！</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="explain5_frame">
+        <h3 class="explain5_content">ほかの掲示板にはないシンプルなUI</h3>
+      </div>
+
+      <!-- ✅ Swiper（カルーセル） -->
+      <div class="swiper" aria-label="地域掲示板の機能紹介スライド">
+        <div class="swiper-wrapper">
+          <img class="swiper-slide" src="img/スクリーンショット 2025-10-27 103705.png" alt="最新スレッド画面" loading="lazy">
+          <img class="swiper-slide" src="img/スクリーンショット 2025-10-24 132233.png" alt="スレッド検索画面" loading="lazy">
+          <img class="swiper-slide" src="img/スクリーンショット 2025-10-24 132436.png" alt="投稿一覧画面" loading="lazy">
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev" aria-label="前のスライドへ"></div>
+        <div class="swiper-button-next" aria-label="次のスライドへ"></div>
+      </div>
+      <div class="start_frame">
+        <a class="start" href="https://keijibann2.vercel.app/">掲示板を始めてみる</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 地域掲示板 - 地域の情報をみんなでつなぐサイト</p>
+  </footer>
+
+  <!-- ✅ スクリプト -->
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".slide1, .slide2");
+    const slides2 = document.querySelectorAll(".slide3, .slide4");
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove("active");
+      slides2[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+      slides2[index].classList.add("active");
+    }, 4000);
+  });
+
+  const swiper = new Swiper('.swiper', {
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    pagination: { el: '.swiper-pagination' },
+    loop: true
+  });
+  </script>
+</body>
+</html>
