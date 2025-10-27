@@ -19,7 +19,36 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="地域掲示板">
   <meta name="twitter:card" content="summary_large_image">
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "地域掲示板",
+        "url": "https://example.com/",
+        "description": "地域掲示板は、地域の最新スレッドを共有・検索できる無料の情報共有サイトです。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://example.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "ja"
+      },
+      {
+        "@type": "Organization",
+        "name": "地域掲示板運営チーム",
+        "url": "https://example.com/",
+        "logo": "https://example.com/img/logo.png",
+        "sameAs": [
+          "https://twitter.com/example",
+          "https://www.facebook.com/example"
+        ],
+        "description": "地域の最新情報をみんなで共有できるオンライン掲示板サイトを運営しています。"
+      }
+    ]
+  }
+  </script>
   <!-- ✅ リソース -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
